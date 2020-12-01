@@ -1,16 +1,19 @@
 import cv2
+import numpy as np
 
 def get_frames(img, centers):
     frames = []
-    d = 10
+    l = 15
+    immm = img.astype(np.uint8)
 
-    for center in centers:
-        y1 = center[0] - d
-        y2 = center[0] + d
-        x1 = center[1] - d
-        x2 = center[1] + d
-        frame = img[x1:x2, y1:y2]
-        frames.append(frame)
+    for i in centers:
+        a = []
+        for y in range(i[1] - l, i[1] + l):
+            row = []
+            for x in range(i[0] - l, i[0] + l):
+                row.append(immm[y][x])
+            a.append(row)
+        frames.append(a)
 
     return frames
 

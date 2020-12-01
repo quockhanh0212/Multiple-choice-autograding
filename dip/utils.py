@@ -63,6 +63,7 @@ def detect_circle(img, contours, round_thresh, area_thresh):
             cx = int(moments['m10'] / moments['m00'])
             cy = int(moments['m01'] / moments['m00'])
             centers.append([cx, cy])
+            
             plt.plot(cx, cy, 'ro')
 
     plt.show()

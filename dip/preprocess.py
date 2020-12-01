@@ -1,7 +1,7 @@
 from utils import *
 
-def preprocess(img, kernel_size):
-    blurred = blur_image(img, kernel_size)
-    binary = binary_convert(blurred)
+def preprocess(img):
+    binary = binary_convert(img)
     binary = 255 - binary
+    binary = cv2.resize(binary, (650, 800))
     return binary
