@@ -1,5 +1,4 @@
-import numpy as np
-import cv2
+from utils import *
 
 def get_frames(img, centers):
     frames = []
@@ -45,10 +44,8 @@ def find_max_contour(img):
 
 def check_cross(img):
     # Lấy contour lớn nhất
-    maxContourArray = []
     maxContourArray = find_max_contour(img)
     # Fill contour lớn nhất
-    from scipy.ndimage.morphology import binary_fill_holes
     clean_image = binary_fill_holes(maxContourArray)
     clean_image = np.float32(clean_image)
     # Opening để xoá mất gạch
