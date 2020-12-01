@@ -72,7 +72,7 @@ def detect_circle(img, contours, round_thresh, area_thresh):
 def get_score(answers, right_answers):
     score = 0
     sc_each = 10/len(right_answers)
-    for i in range(right_answers):
+    for i in range(len(right_answers)):
         if answers[i] == right_answers[i]:
             score+= sc_each
 
