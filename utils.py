@@ -80,16 +80,6 @@ def get_score(answers, right_answers):
 
     return score
 
-def get_score(answers, right_answers):
-    score = 0
-    sc_each = 10 / len(right_answers)
-    for i in range(right_answers):
-        if answers[i] == right_answers[i]:
-            score += sc_each
-
-    return score
-
-
 def distance(p1, p2):
     my_dist = math.sqrt(((p1[0] - p2[0]) ** 2) + ((p1[1] - p2[1]) ** 2))
     return my_dist
