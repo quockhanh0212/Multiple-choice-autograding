@@ -49,7 +49,7 @@ def check_cross(img):
     clean_image = binary_fill_holes(maxContourArray)
     clean_image = np.float32(clean_image)
     # Opening để xoá mất gạch
-    kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (5, 5))
+    kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (3, 3))
     opening = cv2.morphologyEx(clean_image, cv2.MORPH_OPEN, kernel)
     # Trừ bản trước và sau opening để xác định gạch
     minus = clean_image - opening

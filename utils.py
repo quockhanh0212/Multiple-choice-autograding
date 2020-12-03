@@ -4,7 +4,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import math
 
-
 def blur_image(img, kernel_size):
     blurred = cv2.GaussianBlur(img, kernel_size, 0)
     plt.imshow(blurred, cmap='gray')
